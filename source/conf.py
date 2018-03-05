@@ -33,7 +33,7 @@ sys.path.insert(0, os.path.abspath('_ext'))
 # ones.
 extensions = ['sphinx.ext.mathjax', 'sphinx.ext.ifconfig', 'sphinx.ext.githubpages', 'edit_on_github']
 
-edit_on_github_project = 'KTH-PDC/snic-irods-userdocs'
+edit_on_github_project = 'KTH-PDC/epic-pid-userdocs'
 edit_on_github_branch = 'master'
 
 # Add any paths that contain templates here, relative to this directory.
@@ -49,9 +49,9 @@ source_suffix = '.rst'
 master_doc = 'index'
 
 # General information about the project.
-project = u'SNIC Swestore'
+project = u'SNIC Data Services'
 copyright = u'2017, Swedish National Infrastructure for Computing (SNIC)'
-author = u'SNIC Storage'
+author = u'SNIC Storage and Data Services'
 
 # The version info for the project you're documenting, acts as replacement for
 # |version| and |release|, also used in various other places throughout the
@@ -108,7 +108,7 @@ html_static_path = ['_static']
 # -- Options for HTMLHelp output ------------------------------------------
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = 'SNICSwestore'
+htmlhelp_basename = 'ePICPID'
 
 
 # -- Options for LaTeX output ---------------------------------------------

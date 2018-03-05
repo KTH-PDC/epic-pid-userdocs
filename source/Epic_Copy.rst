@@ -6,53 +6,59 @@ Persistent Identifiers
 
 A persistent identifier (PID) consists of a prefix and a postfix separated by a forward slash /. The prefix is a single number and groups one or more postfixes maintained by an institution or individual. The postfix is a unique alphanumeric string of characters. The combination of the pre- and postfix uniquely identifies a specific piece of data on a specific location by URL. An example PID is::
 
-    11304/2e873bd8-b988-11e3-8cd7-14feb57d12b9
+    "11304/8656df25-1729-4649-b3d5-38e5f13c4388"
 
 With a PID the actual data is not retrieved yet. To achieve this, a PID resolving service is required.
 
 Typically, a PID does not only provide the location URL of the data the PID is referring to. In many cases additional metadata is given, for example the identifier type, owner, etc.
+
 Resolving PIDs
+----------------
 
-The EPIC PID service provides unique persistent identifiers and allows management of the metadata accompanying the PID. To actually resolve a given PID to its corresponding location, a PID resolving service is required. For a PID registered with the EPIC PID service, the Handle service run by Corporation for National Research Initiatives (CNRI) provides these locations based on the PID. For example, to resolve the PID given above, use the Handle service proxy URL followed by the PID to obtain the actual location of the data::
-
-    http://hdl.handle.net/11304/2e873bd8-b988-11e3-8cd7-14feb57d12b9
+The EPIC PID service provides unique persistent identifiers and allows management of the metadata accompanying the PID. To actually resolve a given PID to its corresponding location, a PID resolving service is required. For a PID registered with the EPIC PID service, the Handle service run by Corporation for National Research Initiatives (CNRI) provides these locations based on the PID. For example, to resolve the PID given above, use the Handle service proxy URL followed by the PID to obtain the actual location of the data:
+    
+http://hdl.handle.net/11304/8656df25-1729-4649-b3d5-38e5f13c4388
 
 leads to
 
-    https://b2share.eudat.eu/record/14
+https://b2share.eudat.eu/records/257f3e2a22b44f228ef234c576f142ec
 
-Try it yourself by clicking here. The link does not provide the data, but navigates to a landing page on which the description, metadata and files of the data set are given.
+The link does not provide the data, but navigates to a landing page on which the description, metadata and files of the data set are given.
 
 
 
 Obtaining an account
 ====================
 
-We are pleased to help you with gaining access to the EPIC PID service, answer your questions or assist you to specific requests you may have about the service and SURFsara. Please contact us through our helpdesk@surfsara.nl.
+We are pleased to help you with gaining access to the ePIC PID service, answer your questions or assist you to specific requests you may have about the service and SNIC. Please contact us through our support@swestore.se.
 
-For tests we can provide you with an account under a test prefix. This can be used to test your procedures and handles. The handles under the test prefix are NOT permanent.
+For tests we can provide you with an account under a test prefix. This can be used to test your procedures and handles. The handles under the test prefix are NOT permanent and account is time limited.
 
-As extra functionality we provide a reverse lookup function. Normally a handle is created and an URL is placed in here. We offer the possibility to search in the database if the URL is already in the database. This could prevent having 2 different handles pointing to the same URL. But that is application dependant. We call this a reverse lookup. If you are interested we will provide you with a separate "<username>:<password>” and link.
+Reverse Lookup
+================
 
-if there are questions you can always ask them via the helpdesk@surfsara.nl at SURFsara.
-
+As extra functionality we provide a reverse lookup function. Normally a handle is created and an URL is placed in. We offer the possibility to search in the database if the URL is already in the database. This could prevent having 2 different handles pointing to the same URL. But that is application dependant. We call this a reverse lookup. If you are interested we will provide you with a separate "<username>:<password>” and link.
 
 
 New users
 =========
 
-As a new user, first you need to generate a private/public keypair and a certificate. This is needed to mint handles. The public key will be uploaded in a handle under a specific index. This will be used to authenticate the user. Before starting first confer with SURFsara which handle and index to use for the certificate to create. By default, SURFsara will use: <prefix>/USER01 at index 310. The example below uses foo/USER01 at index 310.
+As a new user, first you need to generate a private/public keypair and a certificate. This is needed to mint handles. The public key will be uploaded in a handle under a specific index. This will be used to authenticate the user. 
+
+**Before starting first confer with SNIC support at support@swestore.se  which handle and index to use for the certificate to create.** 
+
+The example below uses foo/USER01 at index 310.
 
 Creating the client certificate
 -------------------------------
 
 For authentication using client certificates, a special pair of keys and a certificate file is required. Follow these five steps to create them for your users:
 
-    Creating a private/public key pair
-    Send the public key to SURFsara
-    Transforming the binary private key (.bin) to a .pem file
-    Creating the certificate file
-    Removing the public key from the certificate
+    #. Creating a private/public key pair
+    #. Send the public key to SURFsara
+    #. Transforming the binary private key (.bin) to a .pem file
+    #. Creating the certificate file
+    #. Removing the public key from the certificate
 
 1. Creating a private/public key pair
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -64,16 +70,16 @@ To create the private/public key pai you can use the command line tool hdl-keyge
               -keysize 4096
                foo_USER01_310_privkey.bin foo_USER01_310_pubkey.bin
 
-Note: We put foo_USER01_310 into the name to remember for which user name this key pair is generated! When it asks whether you want to encrypt the key, type ‘n’:
+**Note:** We put foo_USER01_310 into the name to remember for which user name this key pair is generated! When it asks whether you want to encrypt the key, type ‘n’:
 
 Would you like to encrypt your private key? (y/n) [y] n
 
 2. Send the public key to SURFsara
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Please send your public key file foo_USER01_310_pubkey.bin to the SURFsara helpdesk.
+Please send your public key file foo_USER01_310_pubkey.bin to the SNIC helpdesk at support@swestore.se.
 
-Create a message for the attention of "The SURFsara EPIC PID service team". Include your name, the public key and the assigned prefix on the handle system.
+Create a message for the attention of "The SNIC ePIC PID handle service team". Include your name, the public key and the assigned prefix on the handle system.
 
 3. Transforming the binary private key (.bin) to a .pem file
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
@@ -104,12 +110,10 @@ Execute the following command::
                          -out foo_USER01_310_certificate_only.pem
 
 
-
-
 EPIC PID Usage
 ==============
 
-SURFsara uses the handle HTTP JSON REST API to mint handles. This means to create, read, update or delete handles. This API is described in the handle documentation http://www.handle.net/tech_manual/HN_Tech_Manual_8.pdf in chapter 14.
+SNIC uses the handle HTTP JSON REST API to mint handles. This means to create, read, update or delete handles. This API is described in the handle documentation http://www.handle.net/tech_manual/HN_Tech_Manual_8.pdf in chapter 14.
 
 Usage of the HTTP REST API
 ----------------------------
@@ -117,6 +121,7 @@ Usage of the HTTP REST API
 There are several ways to interact with the handle HTTP REST API to {create|modify|delete} handles. Some examples will be given in the following sections.
 
 Native curl
+^^^^^^^^^^^^
 
 A simple script is::
 
@@ -124,7 +129,7 @@ A simple script is::
     
     #### modify following lines. assuming 310:<PREFIX>/USER01 for authentication 
     PREFIX=<insert my own prefix here>
-    PID_SERVER=https://epic5.storage.surfsara.nl:8003/api/handles
+    PID_SERVER=https://130.239.81.124:8000/api/handles
     MY_PATH=<insert path to where privkey and certificate are>
     PRIVKEY=${MY_PATH}/${PREFIX}_USER01_310_privkey.pem
     CERTIFICATE=${MY_PATH}/${PREFIX}_USER01_310_certificate_only.pem
@@ -142,44 +147,36 @@ A simple script is::
             ]}' \
     $PID_SERVER/$PREFIX/$SUFFIX
     
-See the EUDAT Training GitHub repository for more examples.
-
-NOTE for MacOS users: make sure the curl version is compiled with OpenSSL support. The included version in MacOS does not work out of the box. See Known issues for a solution.
+**NOTE:** for MacOS users: make sure the curl version is compiled with OpenSSL support. The included version in MacOS does not work out of the box. See Known issues for a solution.
 
 Python library with API
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-It is possible to access the EPIC PID service using a Python library. The code can be found on GitHub, as well as the documentation. The library needs to be installed first in order to use it.
-
-An example client is can be found here: epicclient2.py
-
-See the EUDAT training GitHub for more examples.
+It is possible to access the EPIC PID service using a Python library. The code can be found on GitHub https://github.com/EUDAT-B2SAFE/PYHANDLE
 
 Usage of the HTTP reverse lookup mechanism
 ---------------------------------------------
 
-SURFsara supports a use case where you search the handle database to see if the URL is already used and has a PID assigned to it. This can prevent the case where a URL is assigned two or more PIDs. This is called handle reverse lookup. For this usage a separate username/password needs to be used.
+SNIC supports a use case where you search the handle database to see if the URL is already used and has a PID assigned to it. This can prevent the case where a URL is assigned two or more PIDs. This is called handle reverse lookup. For this usage a separate username/password needs to be used.
 
 Examples via curl are::
 
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles?URL=*
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles?URL=http://www.test.com
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles?URL=http://www.test.com&EMAIL=mail@test.com
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles?URL=*&limit=20
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles?URL=*&limit=20&page=0
-    
-On the new epic servers (epic5 and epic6) there is now a possibility to limit the search to a specific prefix. Examples via curl for prefix 21.T12995 are::
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles?URL=*
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles?URL=http://www.test.com
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles?URL=http://www.test.com&EMAIL=mail@test.com
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles?URL=*&limit=20
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles?URL=*&limit=20&page=0
 
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles/21.T12995?URL=*
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles/21.T12995?URL=http://www.test.com
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles/21.T12995?URL=*&limit=20
-    curl -u "username:password" https://epic5.storage.surfsara.nl:8003/hrls/handles/21.T12995?URL=*&limit=20&page=0
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles/21.T16999?URL=*
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles/21.T16999?URL=http://www.test.com
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles/21.T16999?URL=*&limit=20
+    curl -u "username:password" https://130.239.81.124:8000/hrls/handles/21.T16999?URL=*&limit=20&page=0
     
 To retrieve full Handle records, set the optional "retrieverecords" parameter to true::
 
-    https://epic5.storage.surfsara.nl:8003/hrls/handles?URL=*&retrieverecords=true
+    https://130.239.81.124:8000/hrls/handles?URL=*&retrieverecords=true
 
-NOTE:
+**NOTE:**
 
     It will decode the standard strings, but NOT the handle specific records.
     The maximum of limit is 100000. The default of limit is 1000. By default it will only show 1000 matches when searching.
