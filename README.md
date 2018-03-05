@@ -1,4 +1,4 @@
-# snic-irods-userdocs
-SNIC iRODS User Documentation
+# epic-pid-userdocs
+SNIC ePIC PID handle User Documentation
 
 -- Someone(™) should write something here -- 
