@@ -24,7 +24,7 @@ Due to the current funding model, the available allocations on Swestore have som
  * Swestore is NOT supposed to be used as archiving service, long-term storage or repository for “static” data. Once data is no longer in the process of change, and decision on which data should be retained shared and/or preserved has been taken, data should be moved toward appropriate data services. The higher education institutions are responsible for archiving and long-term preservation of research data produced by researchers employed by them;
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
    :caption: Contents:
 
    Apply_for_storage 
@@ -33,6 +33,20 @@ Due to the current funding model, the available allocations on Swestore have som
    Grid_certificates
    Support
    Glossary
+
+
+
+
+SurfSara Copy
+`````````````
+
+This part has the documentation copied from SurfSARA. This part will be edited.
+
+.. toctree::
+   :maxdepth: 3
+   :caption: Contents:
+
+   Epic_Copy
 
 Indices and tables
 ==================
