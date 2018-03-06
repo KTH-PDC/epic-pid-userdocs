@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 #
-# SNIC iRODS User Documentation documentation build configuration file, created by
+# SNIC ePIC PID handle service User Documentation build configuration file, created by
 # sphinx-quickstart on Thu Mar 16 11:24:26 2017.
 #
 # This file is execfile()d with the current directory set to its
@@ -135,7 +135,7 @@ latex_elements = {
 # (source start file, target name, title,
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
-    (master_doc, 'SNICiRODSUserDocumentation.tex', u'SNIC iRODS User Documentation Documentation',
+    (master_doc, 'SNICePICPIDhandleserviceUserDocumentation.tex', u'SNIC ePIC PID handle service User Documentation Documentation',
      u'Dejan Vitlacil and Ilari Korhonen', 'manual'),
 ]
 
@@ -145,7 +145,7 @@ latex_documents = [
 # One entry per manual page. List of tuples
 # (source start file, name, description, authors, manual section).
 man_pages = [
-    (master_doc, 'snicirodsuserdocumentation', u'SNIC iRODS User Documentation Documentation',
+    (master_doc, 'snicepicpiduserdocumentation', u'SNIC ePIC PID User Documentation Documentation',
      [author], 1)
 ]
 
@@ -156,7 +156,7 @@ man_pages = [
 # (source start file, target name, title, author,
 #  dir menu entry, description, category)
 texinfo_documents = [
-    (master_doc, 'SNICiRODSUserDocumentation', u'SNIC iRODS User Documentation Documentation',
+    (master_doc, 'SNICePICPIDUserDocumentation', u'SNIC ePIC PID User Documentation Documentation',
      author, 'SNICiRODSUserDocumentation', 'One line description of project.',
      'Miscellaneous'),
 ]
