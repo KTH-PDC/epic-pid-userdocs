@@ -55,7 +55,7 @@ Creating the client certificate
 For authentication using client certificates, a special pair of keys and a certificate file is required. Follow these five steps to create them for your users:
 
     #. Creating a private/public key pair
-    #. Send the public key to SURFsara
+    #. Send the public key to SNIC
     #. Transforming the binary private key (.bin) to a .pem file
     #. Creating the certificate file
     #. Removing the public key from the certificate
@@ -74,7 +74,7 @@ To create the private/public key pai you can use the command line tool hdl-keyge
 
 Would you like to encrypt your private key? (y/n) [y] n
 
-2. Send the public key to SURFsara
+2. Send the public key to SNIC
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
 Please send your public key file foo_USER01_310_pubkey.bin to the SNIC helpdesk at support@swestore.se.
