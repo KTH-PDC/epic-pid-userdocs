@@ -50,7 +50,7 @@ master_doc = 'index'
 
 # General information about the project.
 project = u'SNIC Data Services'
-copyright = u'2017, Swedish National Infrastructure for Computing (SNIC)'
+copyright = u'2017, original work by SURFsara modified by Swedish National Infrastructure for Computing (SNIC)'
 author = u'SNIC Storage and Data Services'
 
 # The version info for the project you're documenting, acts as replacement for
@@ -136,7 +136,7 @@ latex_elements = {
 #  author, documentclass [howto, manual, or own class]).
 latex_documents = [
     (master_doc, 'SNICePICPIDhandleserviceUserDocumentation.tex', u'SNIC ePIC PID handle service User Documentation Documentation',
-     u'Dejan Vitlacil and Ilari Korhonen', 'manual'),
+     u'Dejan Vitlacil', 'manual'),
 ]
 
 
